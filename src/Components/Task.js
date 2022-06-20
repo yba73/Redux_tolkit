@@ -4,7 +4,7 @@ import { removeTodos } from "../features/TodoList";
 import { useState } from "react";
 
 const Task = (props) => {
-  const { id, desc, isDone } = props;
+  const { id, desc } = props;
 
   const handleCheck = () => {
     setChecked(!checked);
@@ -13,7 +13,7 @@ const Task = (props) => {
 
   const dispatch = useDispatch();
   const removeTodo = (id) => {
-    dispatch(removeTodos(id));
+    if (checked === true) dispatch(removeTodos(id));
     console.log(id);
   };
 
@@ -27,7 +27,7 @@ const Task = (props) => {
           onChange={handleCheck}
         />
         <label style={{ textDecoration: checked ? "line-through" : "none" }}>
-          {desc} {isDone}
+          {desc}
         </label>
         <div className="tools">
           <Edit id={id} desc={desc} />
