@@ -109,11 +109,6 @@ h1 {
   color: tomato;
 }
 
-.completed {
-  color: var(--light-dark);
-  text-decoration: line-through;
-}
-
 .not-checked-item {
   text-decoration: none;
 }

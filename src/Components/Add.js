@@ -4,12 +4,17 @@ import { addList } from "../features/TodoList";
 
 const Add = () => {
   const dispatch = useDispatch();
+
   const [newTask, setNewTask] = useState({});
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    dispatch(addList({ desc: newTask, id: Math.random(), isDone: false }));
-    console.log(newTask);
+    if (newTask === "") {
+      alert("Empty");
+    } else {
+      dispatch(addList({ desc: newTask, id: Math.random(), isDone: false }));
+      console.log(newTask);
+    }
   };
 
   return (

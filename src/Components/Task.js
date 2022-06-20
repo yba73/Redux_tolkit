@@ -33,7 +33,7 @@ const Task = (props) => {
           <Edit id={id} desc={desc} />
 
           <button className="delete" onClick={() => removeTodo(id)}>
-            REMOVE
+            Filter
           </button>
         </div>
       </div>
