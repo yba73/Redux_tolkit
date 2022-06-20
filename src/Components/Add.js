@@ -9,7 +9,7 @@ const Add = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    if (newTask === "") {
+    if (newTask.trim().length === 0) {
       alert("Empty");
     } else {
       dispatch(addList({ desc: newTask, id: Math.random(), isDone: false }));
